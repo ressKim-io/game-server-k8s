@@ -1,0 +1,62 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: game-lobby
+  namespace: game-prod
+  labels:
+    app: game-lobby
+    tier: backend
+spec:
+  replicas: 2  # Pod 2개
+  selector:
+    matchLabels:
+      app: game-lobby
+  template:
+    metadata:
+      labels:
+        app: game-lobby
+        tier: backend
+    spec:
+      containers:
+      - name: lobby-server
+        image: nginx:alpine  # 일단 nginx로 테스트 (나중에 실제 이미지로 교체)
+        ports:
+        - containerPort: 80
+          name: http
+        env:
+        # ConfigMap에서 환경변수 가져오기
+        - name: ENVIRONMENT
+          valueFrom:
+            configMapKeyRef:
+              name: game-common-config
+              key: ENVIRONMENT
+        - name: LOG_LEVEL
+          valueFrom:
+            configMapKeyRef:
+              name: game-common-config
+              key: LOG_LEVEL
+        - name: MAX_ROOMS
+          valueFrom:
+            configMapKeyRef:
+              name: lobby-config
+              key: MAX_ROOMS
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "100m"
+          limits:
+            memory: "256Mi"
+            cpu: "200m"
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 80
+          initialDelaySeconds: 10
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 80
+          initialDelaySeconds: 5
+          periodSeconds: 5
+
