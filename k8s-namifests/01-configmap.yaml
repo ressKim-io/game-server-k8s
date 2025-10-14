@@ -1,0 +1,91 @@
+# 전체 게임 서버 공통 설정
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: game-common-config
+  namespace: game-prod
+  labels:
+    app: game-server
+    type: config
+data:
+  # 환경 설정
+  ENVIRONMENT: "production"
+  LOG_LEVEL: "info"
+  REGION: "kr-seoul"
+  
+  # 공통 포트
+  METRICS_PORT: "9100"
+  HEALTH_CHECK_PORT: "8080"
+  
+  # 타임아웃 설정
+  REQUEST_TIMEOUT: "30"
+  CONNECTION_TIMEOUT: "10"
+---
+# 게임 룸 전용 설정
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: gameroom-config
+  namespace: game-prod
+  labels:
+    app: game-room
+    type: config
+data:
+  # 게임 설정
+  TICK_RATE: "60"
+  MAX_PLAYERS: "10"
+  MAP_SIZE: "1000x1000"
+  
+  # 성능 설정
+  PHYSICS_ENGINE: "bullet"
+  THREAD_POOL_SIZE: "4"
+  CPU_AFFINITY: "enabled"
+---
+# 로비 서버 설정
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: lobby-config
+  namespace: game-prod
+  labels:
+    app: game-lobby
+    type: config
+data:
+  # 로비 설정
+  MAX_ROOMS: "100"
+  ROOM_LIST_REFRESH: "5"
+  MATCHMAKING_TIMEOUT: "30"
+---
+# 채팅 서버 설정
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: chat-config
+  namespace: game-prod
+  labels:
+    app: game-chat
+    type: config
+data:
+  # WebSocket 설정
+  WS_MAX_CONNECTIONS: "5000"
+  WS_PING_INTERVAL: "30"
+  MESSAGE_BUFFER_SIZE: "1000"
+  
+  # 채팅 제한
+  MESSAGE_MAX_LENGTH: "500"
+  RATE_LIMIT_PER_MINUTE: "20"
+---
+# 랭킹 서버 설정
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ranking-config
+  namespace: game-prod
+  labels:
+    app: game-ranking
+    type: config
+data:
+  # 랭킹 설정
+  TOP_RANK_COUNT: "100"
+  UPDATE_INTERVAL: "300"
+  CACHE_TTL: "60"
