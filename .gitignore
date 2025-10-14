@@ -1,0 +1,41 @@
+# Kubernetes
+*.log
+*.tmp
+.kube/
+kubeconfig*
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Temporary files
+*.bak
+*.backup
+temp/
+tmp/
+
+# Secrets (보안 중요!)
+*secret*
+*password*
+*token*
+.env
+
+# Scripts output
+deploy.log
+cleanup.log
+
+# Screenshots temp
+screenshots/*.tmp
+docs/temp/
