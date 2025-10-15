@@ -1,0 +1,37 @@
+# Lobby Service - ClusterIP (내부용)
+apiVersion: v1
+kind: Service
+metadata:
+  name: game-lobby
+  namespace: game-prod
+  labels:
+    app: game-lobby
+spec:
+  type: ClusterIP  # 클러스터 내부에서만 접근
+  selector:
+    app: game-lobby
+  ports:
+  - name: http
+    port: 80        # Service 포트
+    targetPort: 80  # Pod 포트
+    protocol: TCP
+---
+# Lobby Service - LoadBalancer (외부 노출용)
+apiVersion: v1
+kind: Service
+metadata:
+  name: game-lobby-external
+  namespace: game-prod
+  labels:
+    app: game-lobby
+    type: external
+spec:
+  type: LoadBalancer  # 외부에서 접근 가능
+  selector:
+    app: game-lobby
+  ports:
+  - name: http
+    port: 8080      # 외부 포트
+    targetPort: 80  # Pod 포트
+    protocol: TCP
+    nodePort: 30080 # k3d에서 매핑한 포트
