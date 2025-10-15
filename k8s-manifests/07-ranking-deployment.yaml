@@ -1,0 +1,77 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: game-ranking
+  namespace: game-prod
+  labels:
+    app: game-ranking
+    tier: backend
+spec:
+  replicas: 1  # 단일 인스턴스 (랭킹 계산 일관성)
+  selector:
+    matchLabels:
+      app: game-ranking
+  template:
+    metadata:
+      labels:
+        app: game-ranking
+        tier: backend
+    spec:
+      containers:
+      - name: ranking-server
+        image: nginx:alpine
+        ports:
+        - containerPort: 80
+          name: http
+        env:
+        - name: ENVIRONMENT
+          valueFrom:
+            configMapKeyRef:
+              name: game-common-config
+              key: ENVIRONMENT
+        - name: TOP_RANK_COUNT
+          valueFrom:
+            configMapKeyRef:
+              name: ranking-config
+              key: TOP_RANK_COUNT
+        - name: UPDATE_INTERVAL
+          valueFrom:
+            configMapKeyRef:
+              name: ranking-config
+              key: UPDATE_INTERVAL
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "100m"
+          limits:
+            memory: "256Mi"
+            cpu: "200m"
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 80
+          initialDelaySeconds: 10
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 80
+          initialDelaySeconds: 5
+          periodSeconds: 5
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: game-ranking
+  namespace: game-prod
+  labels:
+    app: game-ranking
+spec:
+  type: ClusterIP
+  selector:
+    app: game-ranking
+  ports:
+  - name: http
+    port: 80
+    targetPort: 80
+    protocol: TCP
