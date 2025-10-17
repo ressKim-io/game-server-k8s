@@ -25,13 +25,14 @@ Kubernetes를 이용한 마이크로서비스 게임 서버 배포 프로젝트�
 
 구현 과정과 상세 설명은 블로그에서 확인하세요!
 
-1. [Part 1: k3s → k3d 전환](https://resskim-io.github.io/my-blog/challenge/2025-10-17-challenge1-game-server-part1/)
-2. [Part 2: Namespace & ConfigMap](https://resskim-io.github.io/my-blog/challenge/2025-10-17-challenge1-game-server-part2/)
-3. [Part 3: Deployment로 첫 Pod 띄우기](https://resskim-io.github.io/my-blog/challenge/2025-10-17-challenge1-game-server-part3/)
-4. [Part 4: Service로 네트워크 연결](https://resskim-io.github.io/my-blog/challenge/2025-10-17-challenge1-game-server-part4/)
-5. [Part 5: 나머지 서비스 배포](https://resskim-io.github.io/my-blog/challenge/2025-10-17-challenge1-game-server-part5/)
-6. [Part 6: HPA로 Auto Scaling](https://resskim-io.github.io/my-blog/challenge/2025-10-17-challenge1-game-server-part6/)
-7. [Part 7: Ingress로 단일 진입점](https://resskim-io.github.io/my-blog/challenge/2025-10-17-challenge1-game-server-part7/)
+
+1. [Part 1: k3s → k3d 전환](https://resskim-io.github.io/my-blog/challenge/kubernetes/challenge1-game-server-part1/)
+2. [Part 2: Namespace & ConfigMap](https://resskim-io.github.io/my-blog/challenge/kubernetes/challenge1-game-server-part2/)
+3. [Part 3: Deployment로 첫 Pod 띄우기](https://resskim-io.github.io/my-blog/challenge/kubernetes/challenge1-game-server-part3/)
+4. [Part 4: Service로 네트워크 연결](https://resskim-io.github.io/my-blog/challenge/kubernetes/challenge1-game-server-part4/)
+5. [Part 5: 나머지 서비스 배포](https://resskim-io.github.io/my-blog/challenge/kubernetes/challenge1-game-server-part5/)
+6. [Part 6: HPA로 Auto Scaling](https://resskim-io.github.io/my-blog/challenge/kubernetes/challenge1-game-server-part6/)
+7. [Part 7: Ingress로 단일 진입점](https://resskim-io.github.io/my-blog/challenge/kubernetes/challenge1-game-server-part7/)
 
 ---
 
