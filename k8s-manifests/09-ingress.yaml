@@ -1,0 +1,41 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: game-server-ingress
+  namespace: game-prod
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: game.local  # 로컬 테스트용
+    http:
+      paths:
+      - path: /lobby
+        pathType: Prefix
+        backend:
+          service:
+            name: game-lobby
+            port:
+              number: 80
+      - path: /room
+        pathType: Prefix
+        backend:
+          service:
+            name: game-room
+            port:
+              number: 80
+      - path: /chat
+        pathType: Prefix
+        backend:
+          service:
+            name: game-chat
+            port:
+              number: 80
+      - path: /ranking
+        pathType: Prefix
+        backend:
+          service:
+            name: game-ranking
+            port:
+              number: 80
