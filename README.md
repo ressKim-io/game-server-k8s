@@ -7,7 +7,9 @@
 [![K8s](https://img.shields.io/badge/Kubernetes-v1.31-326CE5?logo=kubernetes)](https://kubernetes.io/)
 [![k3d](https://img.shields.io/badge/k3d-v5.8-blue)](https://k3d.io/)
 
-**DevOps 부트캠프챌린지 #1 - 게임 서버 K8s 배포**
+**kt cloud TECH UP 클라우드 네이티브**
+
+**챌린지 #1 - 게임 서버 K8s 배포**
 
 Kubernetes를 이용한 마이크로서비스 게임 서버 배포 프로젝트입니다.
 
