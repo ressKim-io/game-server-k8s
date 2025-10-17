@@ -7,32 +7,27 @@
 [![K8s](https://img.shields.io/badge/Kubernetes-v1.31-326CE5?logo=kubernetes)](https://kubernetes.io/)
 [![k3d](https://img.shields.io/badge/k3d-v5.8-blue)](https://k3d.io/)
 
-**kt-cloud-TECH-UP 클라우드 네이티브 부트캠프 챌린지 #1 - 게임 서버 K8s 배포**
+**DevOps 부트캠프챌린지 #1 - 게임 서버 K8s 배포**
 
 Kubernetes를 이용한 마이크로서비스 게임 서버 배포 프로젝트입니다.
 
-📖 **[구현 과정 블로그 보기](https://resskim-io.github.io/my-blog/categories/#challenge)** 📖
+📖 **<a href="https://resskim-io.github.io/my-blog/categories/#challenge" target="_blank">구현 과정 블로그 보기</a>** 📖
 
 </div>
 
 ---
 
-## 요구사항
-
-- 📋 [챌린지 요구사항](docs/challenge-requirements.md)
-
 ## 📚 블로그 시리즈
 
 구현 과정과 상세 설명은 블로그에서 확인하세요!
 
-
-1. [Part 1: k3s → k3d 전환](https://resskim-io.github.io/my-blog/challenge/kubernetes/challenge1-game-server-part1/)
-2. [Part 2: Namespace & ConfigMap](https://resskim-io.github.io/my-blog/challenge/kubernetes/challenge1-game-server-part2/)
-3. [Part 3: Deployment로 첫 Pod 띄우기](https://resskim-io.github.io/my-blog/challenge/kubernetes/challenge1-game-server-part3/)
-4. [Part 4: Service로 네트워크 연결](https://resskim-io.github.io/my-blog/challenge/kubernetes/challenge1-game-server-part4/)
-5. [Part 5: 나머지 서비스 배포](https://resskim-io.github.io/my-blog/challenge/kubernetes/challenge1-game-server-part5/)
-6. [Part 6: HPA로 Auto Scaling](https://resskim-io.github.io/my-blog/challenge/kubernetes/challenge1-game-server-part6/)
-7. [Part 7: Ingress로 단일 진입점](https://resskim-io.github.io/my-blog/challenge/kubernetes/challenge1-game-server-part7/)
+1. <a href="https://resskim-io.github.io/my-blog/challenge/kubernetes/challenge1-game-server-part1/" target="_blank">Part 1: k3s → k3d 전환</a>
+2. <a href="https://resskim-io.github.io/my-blog/challenge/kubernetes/challenge1-game-server-part2/" target="_blank">Part 2: Namespace & ConfigMap</a>
+3. <a href="https://resskim-io.github.io/my-blog/challenge/kubernetes/challenge1-game-server-part3/" target="_blank">Part 3: Deployment로 첫 Pod 띄우기</a>
+4. <a href="https://resskim-io.github.io/my-blog/challenge/kubernetes/challenge1-game-server-part4/" target="_blank">Part 4: Service로 네트워크 연결</a>
+5. <a href="https://resskim-io.github.io/my-blog/challenge/kubernetes/challenge1-game-server-part5/" target="_blank">Part 5: 나머지 서비스 배포</a>
+6. <a href="https://resskim-io.github.io/my-blog/challenge/kubernetes/challenge1-game-server-part6/" target="_blank">Part 6: HPA로 Auto Scaling</a>
+7. <a href="https://resskim-io.github.io/my-blog/challenge/kubernetes/challenge1-game-server-part7/" target="_blank">Part 7: Ingress로 단일 진입점</a>
 
 ---
 
@@ -109,7 +104,7 @@ curl http://localhost:8080/chat
 curl http://localhost:8080/ranking
 ```
 
-**상세한 과정과 트러블슈팅은 [블로그](https://resskim-io.github.io/my-blog/categories/#challenge)에서 확인하세요!**
+**상세한 과정과 트러블슈팅은 <a href="https://resskim-io.github.io/my-blog/categories/#challenge" target="_blank">블로그</a>에서 확인하세요!**
 
 ---
 
@@ -167,17 +162,17 @@ game-server-k8s/
 
 ## 🔗 관련 링크
 
-- 📖 **[블로그 시리즈 전체보기](https://resskim-io.github.io/my-blog/categories/#challenge)**
+- 📖 **<a href="https://resskim-io.github.io/my-blog/categories/#challenge" target="_blank">블로그 시리즈 전체보기</a>**
 - 📋 [챌린지 요구사항](docs/challenge-requirements.md)
-- 📚 [Kubernetes 공식 문서](https://kubernetes.io/docs/)
-- 🚀 [k3d 공식 문서](https://k3d.io/)
+- 📚 <a href="https://kubernetes.io/docs/" target="_blank">Kubernetes 공식 문서</a>
+- 🚀 <a href="https://k3d.io/" target="_blank">k3d 공식 문서</a>
 
 ---
 
 <div align="center">
 
-**Made with ❤️ by [ressKim](https://github.com/ressKim-io)**
+**Made with ❤️ by <a href="https://github.com/ressKim-io" target="_blank">ressKim</a>**
 
-📖 [상세 구현 과정 보기](https://resskim-io.github.io/my-blog/categories/#challenge)
+📖 <a href="https://resskim-io.github.io/my-blog/categories/#challenge" target="_blank">상세 구현 과정 보기</a>
 
 </div>
